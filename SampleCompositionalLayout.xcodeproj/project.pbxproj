@@ -15,6 +15,7 @@
 		1C0F46A12963EC72007E3778 /* CollectionViewList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0F46A02963EC72007E3778 /* CollectionViewList.storyboard */; };
 		1C0F46A32963ED35007E3778 /* CollectionViewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F46A22963ED35007E3778 /* CollectionViewListViewController.swift */; };
 		1C0F46A729640FBE007E3778 /* DistinctSectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F46A629640FBE007E3778 /* DistinctSectionsViewController.swift */; };
+		1C87453C29643117005764C0 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C87453B29643117005764C0 /* ListCell.swift */; };
 		1CA8B370296412A700A71C7E /* DistinctSections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA8B36F296412A700A71C7E /* DistinctSections.storyboard */; };
 		1CA8B38329641A6A00A71C7E /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA8B38129641A6A00A71C7E /* TextCollectionViewCell.swift */; };
 		1CA8B38429641A6A00A71C7E /* TextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA8B38229641A6A00A71C7E /* TextCollectionViewCell.xib */; };
@@ -31,6 +32,7 @@
 		1C0F46A02963EC72007E3778 /* CollectionViewList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionViewList.storyboard; sourceTree = "<group>"; };
 		1C0F46A22963ED35007E3778 /* CollectionViewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewListViewController.swift; sourceTree = "<group>"; };
 		1C0F46A629640FBE007E3778 /* DistinctSectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistinctSectionsViewController.swift; sourceTree = "<group>"; };
+		1C87453B29643117005764C0 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		1CA8B36F296412A700A71C7E /* DistinctSections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DistinctSections.storyboard; sourceTree = "<group>"; };
 		1CA8B38129641A6A00A71C7E /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CA8B38229641A6A00A71C7E /* TextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		1CA8B371296412B800A71C7E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1C87453B29643117005764C0 /* ListCell.swift */,
 				1C0EA6BD29641E6B0003C923 /* TextCell.swift */,
 				1CA8B38129641A6A00A71C7E /* TextCollectionViewCell.swift */,
 				1CA8B38229641A6A00A71C7E /* TextCollectionViewCell.xib */,
@@ -190,6 +193,7 @@
 				1CA8B38329641A6A00A71C7E /* TextCollectionViewCell.swift in Sources */,
 				1C0F46A729640FBE007E3778 /* DistinctSectionsViewController.swift in Sources */,
 				1C0F46A32963ED35007E3778 /* CollectionViewListViewController.swift in Sources */,
+				1C87453C29643117005764C0 /* ListCell.swift in Sources */,
 				1C0F468D2963E9E6007E3778 /* AppDelegate.swift in Sources */,
 				1C0EA6BE29641E6C0003C923 /* TextCell.swift in Sources */,
 				1C0F468F2963E9E6007E3778 /* SceneDelegate.swift in Sources */,

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HOL-jP-cE4">
-                                <rect key="frame" x="16" y="16" width="361" height="820"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MNP-nc-wdp">
                                     <size key="itemSize" width="128" height="128"/>
@@ -28,10 +28,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wxi-Xg-GOi">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dHP-0H-oEk">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -41,12 +41,15 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="HOL-jP-cE4" secondAttribute="trailing" constant="16" id="4t2-qy-r8N"/>
-                            <constraint firstAttribute="top" secondItem="HOL-jP-cE4" secondAttribute="top" constant="-16" id="lEq-4z-A1L"/>
-                            <constraint firstAttribute="bottom" secondItem="HOL-jP-cE4" secondAttribute="bottom" constant="16" id="vig-ih-71B"/>
-                            <constraint firstItem="HOL-jP-cE4" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="16" id="zEq-0m-qK3"/>
+                            <constraint firstAttribute="trailing" secondItem="HOL-jP-cE4" secondAttribute="trailing" id="4t2-qy-r8N"/>
+                            <constraint firstAttribute="top" secondItem="HOL-jP-cE4" secondAttribute="top" id="lEq-4z-A1L"/>
+                            <constraint firstAttribute="bottom" secondItem="HOL-jP-cE4" secondAttribute="bottom" id="vig-ih-71B"/>
+                            <constraint firstItem="HOL-jP-cE4" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="zEq-0m-qK3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="distinctSectionsCollectionView" destination="HOL-jP-cE4" id="inE-wy-2Ls"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
