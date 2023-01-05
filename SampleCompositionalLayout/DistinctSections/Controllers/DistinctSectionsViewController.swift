@@ -8,7 +8,7 @@
 import UIKit
 
 final class DistinctSectionsViewController: UIViewController {
-    private enum SectionLayoutKind: Int, CaseIterable {
+    private enum SectionKind: Int, CaseIterable {
         case list, grid5, grid3, grid2
         // それぞれのSectionの列数を保持
         var columnCount: Int {
@@ -23,12 +23,22 @@ final class DistinctSectionsViewController: UIViewController {
                 return 2
             }
         }
+
+        // それぞれのSectionのスクロール方向,スタイルを保持
+        var orthogonalScrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior {
+            switch self {
+            case .list: return .none
+            case .grid5: return .continuous
+            case .grid3: return .paging
+            case .grid2: return .none
+            }
+        }
     }
 
     @IBOutlet private weak var distinctSectionsCollectionView: UICollectionView!
 
     // collectionViewに表示させるデータを管理するクラス
-    private var dataSource: UICollectionViewDiffableDataSource<SectionLayoutKind, Int>! = nil
+    private var dataSource: UICollectionViewDiffableDataSource<SectionKind, Int>! = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +55,7 @@ extension DistinctSectionsViewController {
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnviroment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
 
-            guard let sectionLayoutKind = SectionLayoutKind(rawValue: sectionIndex) else { return nil }
+            guard let sectionLayoutKind = SectionKind(rawValue: sectionIndex) else { return nil }
             // 列数を保持
             let columns = sectionLayoutKind.columnCount
 
@@ -75,6 +85,9 @@ extension DistinctSectionsViewController {
             section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
             // もしsectionKindがgrid2ならばGroup間の間隔は10空ける
             if sectionLayoutKind == .grid2 { section.interGroupSpacing = 10 }
+
+            // Sectionごとに指定したスクロールが実装されるsyori
+            section.orthogonalScrollingBehavior = sectionLayoutKind.orthogonalScrollingBehavior
 
             return section
         }
@@ -123,8 +136,8 @@ extension DistinctSectionsViewController {
         }
 
         // CollectionViewに渡すデータを代入
-        dataSource = UICollectionViewDiffableDataSource<SectionLayoutKind, Int>(collectionView: distinctSectionsCollectionView, cellProvider:  { collectionView, indexPath, identifier in
-            switch SectionLayoutKind(rawValue: indexPath.section)! {
+        dataSource = UICollectionViewDiffableDataSource<SectionKind, Int>(collectionView: distinctSectionsCollectionView, cellProvider:  { collectionView, indexPath, identifier in
+            switch SectionKind(rawValue: indexPath.section)! {
             case .list:
                 return collectionView.dequeueConfiguredReusableCell(using: listCellRegistration,
                                                                     for: indexPath,
@@ -154,8 +167,8 @@ extension DistinctSectionsViewController {
         let itemsPerSection = 10
 
         // データをViewに反映させる為のDiffableDataSourceSnapshotクラスのインスタンスを生成
-        var snapshot = NSDiffableDataSourceSnapshot<SectionLayoutKind, Int>()
-        SectionLayoutKind.allCases.forEach {
+        var snapshot = NSDiffableDataSourceSnapshot<SectionKind, Int>()
+        SectionKind.allCases.forEach {
             snapshot.appendSections([$0])
 
             // Rangeの最低値
